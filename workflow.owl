@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://emmo.info/promo/workflow#"
+<rdf:RDF xmlns="http://emmo.info/promo/workflow"
      xml:base="http://emmo.info/promo/workflow"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -31,6 +31,15 @@
     
 
 
+    <!-- http://emmo.info/promo/workflow#PROMO_39265ae4_f952_4a0e_b2ff_25411648b8be -->
+
+    <owl:ObjectProperty rdf:about="http://emmo.info/promo/workflow#PROMO_39265ae4_f952_4a0e_b2ff_25411648b8be">
+        <owl:inverseOf rdf:resource="http://emmo.info/promo/workflow#PROMO_d4ddfafc_911e_4860_a895_a5abd4d3cda2"/>
+        <rdfs:label xml:lang="en">hasOutputArc</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://emmo.info/promo/workflow#PROMO_7227c556_da98_4e4d_8487_0237aa4c1f5e -->
 
     <owl:ObjectProperty rdf:about="http://emmo.info/promo/workflow#PROMO_7227c556_da98_4e4d_8487_0237aa4c1f5e">
@@ -39,12 +48,50 @@
     
 
 
+    <!-- http://emmo.info/promo/workflow#PROMO_7b63828f_bb77_4f36_a232_3c33f035ee01 -->
+
+    <owl:ObjectProperty rdf:about="http://emmo.info/promo/workflow#PROMO_7b63828f_bb77_4f36_a232_3c33f035ee01">
+        <owl:inverseOf rdf:resource="http://emmo.info/promo/workflow#PROMO_bd0b69ad_6ccd_482e_aac8_1c4472b6fba3"/>
+        <rdfs:label xml:lang="en">hasPart</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://emmo.info/promo/workflow#PROMO_bd0b69ad_6ccd_482e_aac8_1c4472b6fba3 -->
+
+    <owl:ObjectProperty rdf:about="http://emmo.info/promo/workflow#PROMO_bd0b69ad_6ccd_482e_aac8_1c4472b6fba3">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://emmo.info/promo/workflow#PROMO_534ad9e2_c3c4_46ba_acac_032782651ed8"/>
+                    <rdf:Description rdf:about="http://emmo.info/promo/workflow#PROMO_81937d0a_7958_4c1d_b533_f181ba407d09"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://emmo.info/promo/workflow#PROMO_27a30e27_1648_4417_8769_0d8775d9c013"/>
+        <rdfs:label xml:lang="en">partOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://emmo.info/promo/workflow#PROMO_bd4ef26e_ea69_4bee_a603_0b440981624b -->
 
     <owl:ObjectProperty rdf:about="http://emmo.info/promo/workflow#PROMO_bd4ef26e_ea69_4bee_a603_0b440981624b">
-        <rdfs:domain rdf:resource="http://emmo.info/promo/workflow#PROMO_2f0db569_245c_4265_a8ab_3bb230fecfde"/>
+        <owl:inverseOf rdf:resource="http://emmo.info/promo/workflow#PROMO_dddbd331_3806_43a0_8cb0_a9477230b364"/>
+        <rdfs:domain rdf:resource="http://emmo.info/promo/workflow#PROMO_81937d0a_7958_4c1d_b533_f181ba407d09"/>
         <rdfs:range rdf:resource="http://emmo.info/promo/workflow#PROMO_534ad9e2_c3c4_46ba_acac_032782651ed8"/>
         <rdfs:label xml:lang="en">hasTailNode</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://emmo.info/promo/workflow#PROMO_be024819_d987_4ba4_b241_fd632f32e699 -->
+
+    <owl:ObjectProperty rdf:about="http://emmo.info/promo/workflow#PROMO_be024819_d987_4ba4_b241_fd632f32e699">
+        <rdfs:subPropertyOf rdf:resource="http://emmo.info/promo/workflow#PROMO_7b63828f_bb77_4f36_a232_3c33f035ee01"/>
+        <rdfs:domain rdf:resource="http://emmo.info/promo/workflow#PROMO_27a30e27_1648_4417_8769_0d8775d9c013"/>
+        <rdfs:range rdf:resource="http://emmo.info/promo/workflow#PROMO_81937d0a_7958_4c1d_b533_f181ba407d09"/>
+        <rdfs:label xml:lang="en">hasArc</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -52,10 +99,70 @@
     <!-- http://emmo.info/promo/workflow#PROMO_d4ddfafc_911e_4860_a895_a5abd4d3cda2 -->
 
     <owl:ObjectProperty rdf:about="http://emmo.info/promo/workflow#PROMO_d4ddfafc_911e_4860_a895_a5abd4d3cda2">
-        <rdfs:domain rdf:resource="http://emmo.info/promo/workflow#PROMO_2f0db569_245c_4265_a8ab_3bb230fecfde"/>
+        <rdfs:domain rdf:resource="http://emmo.info/promo/workflow#PROMO_81937d0a_7958_4c1d_b533_f181ba407d09"/>
         <rdfs:range rdf:resource="http://emmo.info/promo/workflow#PROMO_534ad9e2_c3c4_46ba_acac_032782651ed8"/>
         <rdfs:label xml:lang="en">hasHeadNode</rdfs:label>
     </owl:ObjectProperty>
+    
+
+
+    <!-- http://emmo.info/promo/workflow#PROMO_dddbd331_3806_43a0_8cb0_a9477230b364 -->
+
+    <owl:ObjectProperty rdf:about="http://emmo.info/promo/workflow#PROMO_dddbd331_3806_43a0_8cb0_a9477230b364">
+        <rdfs:label xml:lang="en">hasInputArc</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://emmo.info/promo/workflow#PROMO_e02ca878_49de_44c8_a30c_782cf8f23c50 -->
+
+    <owl:ObjectProperty rdf:about="http://emmo.info/promo/workflow#PROMO_e02ca878_49de_44c8_a30c_782cf8f23c50">
+        <rdfs:subPropertyOf rdf:resource="http://emmo.info/promo/workflow#PROMO_7b63828f_bb77_4f36_a232_3c33f035ee01"/>
+        <rdfs:domain rdf:resource="http://emmo.info/promo/workflow#PROMO_27a30e27_1648_4417_8769_0d8775d9c013"/>
+        <rdfs:range rdf:resource="http://emmo.info/promo/workflow#PROMO_534ad9e2_c3c4_46ba_acac_032782651ed8"/>
+        <rdfs:label xml:lang="en">hasNode</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://emmo.info/promo/workflow#workflow_id -->
+
+    <owl:DatatypeProperty rdf:about="http://emmo.info/promo/workflow#workflow_id">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://emmo.info/promo/workflow#PROMO_27a30e27_1648_4417_8769_0d8775d9c013"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://emmo.info/promo/workflow/arc_id -->
+
+    <owl:DatatypeProperty rdf:about="http://emmo.info/promo/workflow/arc_id">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://emmo.info/promo/workflow#PROMO_81937d0a_7958_4c1d_b533_f181ba407d09"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://emmo.info/promo/workflow/node_id -->
+
+    <owl:DatatypeProperty rdf:about="http://emmo.info/promo/workflow/node_id">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://emmo.info/promo/workflow#PROMO_534ad9e2_c3c4_46ba_acac_032782651ed8"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
     
 
 
@@ -156,7 +263,6 @@
     <!-- http://emmo.info/promo/workflow#PROMO_66b1d9e7_559f_485d_84c6_baf281243c6e -->
 
     <owl:Class rdf:about="http://emmo.info/promo/workflow#PROMO_66b1d9e7_559f_485d_84c6_baf281243c6e">
-        <rdfs:subClassOf rdf:resource="http://emmo.info/promo/workflow#PROMO_8744353e_3fb2_4129_baf5_3179e273dedc"/>
         <rdfs:label xml:lang="en">Step</rdfs:label>
     </owl:Class>
     
