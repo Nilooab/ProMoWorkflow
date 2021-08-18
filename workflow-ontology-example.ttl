@@ -1,0 +1,280 @@
+prefix dc: <http://purl.org/dc/elements/1.1/>
+prefix dcterms: <http://purl.org/dc/terms/>
+prefix err: <http://www.w3.org/2005/xqt-errors#>
+prefix fn: <http://www.w3.org/2005/xpath-functions#>
+prefix foaf: <http://xmlns.com/foaf/0.1/>
+prefix fti: <http://franz.com/ns/allegrograph/2.2/textindex/>
+prefix keyword: <http://franz.com/ns/keyword#>
+prefix nd: <http://franz.com/ns/allegrograph/5.0/geo/nd#>
+prefix ndfn: <http://franz.com/ns/allegrograph/5.0/geo/nd/fn#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix skos: <http://www.w3.org/2004/02/skos/core#>
+prefix xs: <http://www.w3.org/2001/XMLSchema#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+<http://www.semanticweb.org/simple-workflow-ontology#uc3_workflow> <http://www.semanticweb.org/simple-workflow-ontology#hasProcessFlow> <http://www.semanticweb.org/simple-workflow-ontology#process_flow_1> , 
+    <http://www.semanticweb.org/simple-workflow-ontology#process_flow_2> ; 
+  <http://www.semanticweb.org/simple-workflow-ontology#hasDataflow> <http://www.semanticweb.org/simple-workflow-ontology#joufile> , 
+  <http://www.semanticweb.org/simple-workflow-ontology#editorout1> , 
+  <http://www.semanticweb.org/simple-workflow-ontology#ref> , 
+  <http://www.semanticweb.org/simple-workflow-ontology#journal> , 
+  <http://www.semanticweb.org/simple-workflow-ontology#mod3> , 
+  <http://www.semanticweb.org/simple-workflow-ontology#editorout3> , 
+  <http://www.semanticweb.org/simple-workflow-ontology#mod1> , 
+  <http://www.semanticweb.org/simple-workflow-ontology#header> ; 
+  <http://www.semanticweb.org/simple-workflow-ontology#hasActions> <http://www.semanticweb.org/simple-workflow-ontology#action1> , 
+  <http://www.semanticweb.org/simple-workflow-ontology#action3> , 
+  <http://www.semanticweb.org/simple-workflow-ontology#action2> ; 
+  rdf:type owl:NamedIndividual , 
+  <http://www.semanticweb.org/simple-workflow-ontology#Workflow> ; 
+  <http://www.semanticweb.org/simple-workflow-ontology#hasArtifact> <http://www.semanticweb.org/simple-workflow-ontology#uc3_editor> , 
+  <http://www.semanticweb.org/simple-workflow-ontology#datacache> , 
+  <http://www.semanticweb.org/simple-workflow-ontology#uc3_wrapper> , 
+  <http://www.semanticweb.org/simple-workflow-ontology#uc3_agent_service> ; 
+  <http://www.semanticweb.org/simple-workflow-ontology#hasStep> <http://www.semanticweb.org/simple-workflow-ontology#uc3_agent_step> , 
+  <http://www.semanticweb.org/simple-workflow-ontology#uc3_editor_step> , 
+  <http://www.semanticweb.org/simple-workflow-ontology#uc3_wrapper_step> . 
+<http://www.semanticweb.org/simple-workflow-ontology#hasArc> rdfs:subPropertyOf <http://www.semanticweb.org/simple-workflow-ontology#hasPart> ; 
+  rdfs:domain <http://www.semanticweb.org/simple-workflow-ontology#Workflow> ; 
+  rdfs:range <http://www.semanticweb.org/simple-workflow-ontology#DirectedArc> ; 
+  rdf:type owl:ObjectProperty . 
+<http://www.semanticweb.org/simple-workflow-ontology#sourceOf> rdfs:range _:bD341B06Cx17 ; 
+  rdf:type owl:ObjectProperty . 
+<http://www.semanticweb.org/simple-workflow-ontology#Node> rdf:type owl:Class . 
+<http://www.semanticweb.org/simple-workflow-ontology#action1> rdf:type owl:NamedIndividual , 
+    <http://www.semanticweb.org/simple-workflow-ontology#Action> ; 
+  <http://www.semanticweb.org/simple-workflow-ontology#redirect> "https://staging.the-marketplace.eu/api/proxy/proxy/3ab8e58e-32b4-49b8-b3b3-9d2d08a1b8a7/formPage"^^xsd:anyURI . 
+<http://www.semanticweb.org/simple-workflow-ontology#action3> <http://www.semanticweb.org/simple-workflow-ontology#post> "http://proxy:5000/proxy/49b5dd87-79fc-42ea-bb20-20d278cd2a45/runSimulation?instanceId=<instanceId>"^^xsd:anyURI ; 
+  rdf:type owl:NamedIndividual , 
+  <http://www.semanticweb.org/simple-workflow-ontology#Action> . 
+<http://www.semanticweb.org/simple-workflow-ontology#action2> <http://www.semanticweb.org/simple-workflow-ontology#post> "http://proxy:5000/proxy/d8d90aac-8213-4ea1-b451-fee8a9642d68/createDataset"^^xsd:anyURI ; 
+  rdf:type owl:NamedIndividual , 
+  <http://www.semanticweb.org/simple-workflow-ontology#Action> . 
+<http://www.semanticweb.org/simple-workflow-ontology#ProcessFlow> rdfs:subClassOf <http://www.semanticweb.org/simple-workflow-ontology#DirectedArc> ; 
+  rdf:type owl:Class . 
+<http://www.semanticweb.org/simple-workflow-ontology#hasTargetStep> rdfs:subPropertyOf <http://www.semanticweb.org/simple-workflow-ontology#hasTarget> ; 
+  rdfs:range <http://www.semanticweb.org/simple-workflow-ontology#Step> ; 
+  rdf:type owl:ObjectProperty . 
+<http://www.semanticweb.org/simple-workflow-ontology#isActionFor> rdfs:domain <http://www.semanticweb.org/simple-workflow-ontology#Action> ; 
+  rdfs:range <http://www.semanticweb.org/simple-workflow-ontology#Artifacts> ; 
+  rdf:type owl:ObjectProperty . 
+<http://www.semanticweb.org/simple-workflow-ontology> rdf:type owl:Ontology . 
+<http://www.semanticweb.org/simple-workflow-ontology#Artifacts> owl:disjointWith <http://www.semanticweb.org/simple-workflow-ontology#Step> ; 
+  rdfs:subClassOf <http://www.semanticweb.org/simple-workflow-ontology#Node> ; 
+  rdf:type owl:Class . 
+<http://www.semanticweb.org/simple-workflow-ontology#Data> rdf:type owl:Class . 
+<http://www.semanticweb.org/simple-workflow-ontology#targetOf> rdfs:range _:bD341B06Cx21 ; 
+  rdf:type owl:ObjectProperty . 
+<http://www.semanticweb.org/simple-workflow-ontology#hasSource> rdfs:range _:bD341B06Cx5 ; 
+  owl:inverseOf <http://www.semanticweb.org/simple-workflow-ontology#sourceOf> ; 
+  rdf:type owl:ObjectProperty . 
+<http://www.semanticweb.org/simple-workflow-ontology#joufile> <http://www.semanticweb.org/simple-workflow-ontology#hasSourceArtifact> <http://www.semanticweb.org/simple-workflow-ontology#uc3_wrapper> ; 
+  <http://www.semanticweb.org/simple-workflow-ontology#hasData> <http://www.semanticweb.org/simple-workflow-ontology#data-jou> ; 
+  <http://www.semanticweb.org/simple-workflow-ontology#hasTargetArtifact> <http://www.semanticweb.org/simple-workflow-ontology#datacache> ; 
+  rdf:type owl:NamedIndividual , 
+  <http://www.semanticweb.org/simple-workflow-ontology#DataFlow> . 
+<http://www.semanticweb.org/simple-workflow-ontology#data-input1> rdf:type <http://www.semanticweb.org/simple-workflow-ontology#Data> , 
+    owl:NamedIndividual ; 
+  <http://www.semanticweb.org/simple-workflow-ontology#value> "http://lvh.me/datacache"^^xsd:anyURI . 
+<http://www.semanticweb.org/simple-workflow-ontology#data-input3> rdf:type <http://www.semanticweb.org/simple-workflow-ontology#Data> , 
+    owl:NamedIndividual ; 
+  <http://www.semanticweb.org/simple-workflow-ontology#value> "http://lvh.me/datacache"^^xsd:anyURI . 
+<http://www.semanticweb.org/simple-workflow-ontology#hasSourceArtifact> rdfs:subPropertyOf <http://www.semanticweb.org/simple-workflow-ontology#hasSource> ; 
+  rdfs:range <http://www.semanticweb.org/simple-workflow-ontology#Artifacts> ; 
+  rdf:type owl:ObjectProperty . 
+<http://www.semanticweb.org/simple-workflow-ontology#Action> rdfs:subClassOf <http://www.semanticweb.org/simple-workflow-ontology#DirectedArc> ; 
+  rdf:type owl:Class . 
+<http://www.semanticweb.org/simple-workflow-ontology#post> rdfs:range xsd:anyURI ; 
+  rdf:type owl:DatatypeProperty . 
+<http://www.semanticweb.org/simple-workflow-ontology#hasProcessFlow> rdfs:subPropertyOf <http://www.semanticweb.org/simple-workflow-ontology#hasArc> ; 
+  rdfs:domain <http://www.semanticweb.org/simple-workflow-ontology#Workflow> ; 
+  rdfs:range <http://www.semanticweb.org/simple-workflow-ontology#ProcessFlow> ; 
+  rdf:type owl:ObjectProperty . 
+<http://www.semanticweb.org/simple-workflow-ontology#uc3_editor> <http://www.semanticweb.org/simple-workflow-ontology#hasActionBy> <http://www.semanticweb.org/simple-workflow-ontology#action1> ; 
+  rdf:type <http://www.semanticweb.org/simple-workflow-ontology#Artifacts> , 
+  owl:NamedIndividual . 
+<http://www.semanticweb.org/simple-workflow-ontology#datacache> rdf:type <http://www.semanticweb.org/simple-workflow-ontology#Artifacts> , 
+    owl:NamedIndividual ; 
+  <http://www.semanticweb.org/simple-workflow-ontology#value> "http://lvh.me/datacache"^^xsd:anyURI . 
+<http://www.semanticweb.org/simple-workflow-ontology#editorout1> <http://www.semanticweb.org/simple-workflow-ontology#hasSourceArtifact> <http://www.semanticweb.org/simple-workflow-ontology#uc3_editor> ; 
+  <http://www.semanticweb.org/simple-workflow-ontology#hasData> <http://www.semanticweb.org/simple-workflow-ontology#data-input1> ; 
+  <http://www.semanticweb.org/simple-workflow-ontology#hasTargetArtifact> <http://www.semanticweb.org/simple-workflow-ontology#datacache> ; 
+  rdf:type owl:NamedIndividual , 
+  <http://www.semanticweb.org/simple-workflow-ontology#DataFlow> . 
+<http://www.semanticweb.org/simple-workflow-ontology#ref> <http://www.semanticweb.org/simple-workflow-ontology#hasSourceArtifact> <http://www.semanticweb.org/simple-workflow-ontology#uc3_agent_service> ; 
+  <http://www.semanticweb.org/simple-workflow-ontology#hasData> <http://www.semanticweb.org/simple-workflow-ontology#data-output> ; 
+  <http://www.semanticweb.org/simple-workflow-ontology#hasTargetArtifact> <http://www.semanticweb.org/simple-workflow-ontology#datacache> ; 
+  rdf:type owl:NamedIndividual , 
+  <http://www.semanticweb.org/simple-workflow-ontology#DataFlow> . 
+<http://www.semanticweb.org/simple-workflow-ontology#uc3_agent_step> <http://www.semanticweb.org/simple-workflow-ontology#hasAction> <http://www.semanticweb.org/simple-workflow-ontology#action3> ; 
+  rdf:type owl:NamedIndividual , 
+  <http://www.semanticweb.org/simple-workflow-ontology#Step> . 
+<http://www.semanticweb.org/simple-workflow-ontology#uc3_editor_step> <http://www.semanticweb.org/simple-workflow-ontology#hasAction> <http://www.semanticweb.org/simple-workflow-ontology#action1> ; 
+  rdf:type owl:NamedIndividual , 
+  <http://www.semanticweb.org/simple-workflow-ontology#Step> . 
+<http://www.semanticweb.org/simple-workflow-ontology#hasPart> rdfs:domain <http://www.semanticweb.org/simple-workflow-ontology#Workflow> ; 
+  rdfs:range _:bD341B06Cx1 ; 
+  owl:inverseOf <http://www.semanticweb.org/simple-workflow-ontology#partOf> ; 
+  rdf:type owl:ObjectProperty . 
+<http://www.semanticweb.org/simple-workflow-ontology#process_flow_1> <http://www.semanticweb.org/simple-workflow-ontology#hasTargetStep> <http://www.semanticweb.org/simple-workflow-ontology#uc3_wrapper_step> ; 
+  <http://www.semanticweb.org/simple-workflow-ontology#hasSourceStep> <http://www.semanticweb.org/simple-workflow-ontology#uc3_editor_step> ; 
+  rdf:type <http://www.semanticweb.org/simple-workflow-ontology#ProcessFlow> , 
+  owl:NamedIndividual . 
+<http://www.semanticweb.org/simple-workflow-ontology#journal> <http://www.semanticweb.org/simple-workflow-ontology#hasSourceArtifact> <http://www.semanticweb.org/simple-workflow-ontology#datacache> ; 
+  <http://www.semanticweb.org/simple-workflow-ontology#hasData> <http://www.semanticweb.org/simple-workflow-ontology#data-jou> ; 
+  <http://www.semanticweb.org/simple-workflow-ontology#hasTargetArtifact> <http://www.semanticweb.org/simple-workflow-ontology#uc3_agent_service> ; 
+  rdf:type owl:NamedIndividual , 
+  <http://www.semanticweb.org/simple-workflow-ontology#DataFlow> . 
+<http://www.semanticweb.org/simple-workflow-ontology#hasActionBy> rdfs:domain <http://www.semanticweb.org/simple-workflow-ontology#Artifacts> ; 
+  rdfs:range <http://www.semanticweb.org/simple-workflow-ontology#Action> ; 
+  owl:inverseOf <http://www.semanticweb.org/simple-workflow-ontology#isActionFor> ; 
+  rdf:type owl:ObjectProperty . 
+<http://www.semanticweb.org/simple-workflow-ontology#Workflow> rdf:type owl:Class . 
+<http://www.semanticweb.org/simple-workflow-ontology#mod3> <http://www.semanticweb.org/simple-workflow-ontology#hasSourceArtifact> <http://www.semanticweb.org/simple-workflow-ontology#datacache> ; 
+  <http://www.semanticweb.org/simple-workflow-ontology#hasData> <http://www.semanticweb.org/simple-workflow-ontology#data-input3> ; 
+  <http://www.semanticweb.org/simple-workflow-ontology#hasTargetArtifact> <http://www.semanticweb.org/simple-workflow-ontology#uc3_wrapper> ; 
+  rdf:type owl:NamedIndividual , 
+  <http://www.semanticweb.org/simple-workflow-ontology#DataFlow> . 
+<http://www.semanticweb.org/simple-workflow-ontology#hasDataflow> rdfs:subPropertyOf <http://www.semanticweb.org/simple-workflow-ontology#hasArc> ; 
+  rdfs:domain <http://www.semanticweb.org/simple-workflow-ontology#Workflow> ; 
+  rdfs:range <http://www.semanticweb.org/simple-workflow-ontology#DataFlow> ; 
+  rdf:type owl:ObjectProperty . 
+<http://www.semanticweb.org/simple-workflow-ontology#hasSourceStep> rdfs:subPropertyOf <http://www.semanticweb.org/simple-workflow-ontology#hasSource> ; 
+  rdfs:range <http://www.semanticweb.org/simple-workflow-ontology#Step> ; 
+  rdf:type owl:ObjectProperty . 
+<http://www.semanticweb.org/simple-workflow-ontology#editorout3> <http://www.semanticweb.org/simple-workflow-ontology#hasSourceArtifact> <http://www.semanticweb.org/simple-workflow-ontology#uc3_editor> ; 
+  <http://www.semanticweb.org/simple-workflow-ontology#hasData> <http://www.semanticweb.org/simple-workflow-ontology#data-input3> ; 
+  <http://www.semanticweb.org/simple-workflow-ontology#hasTargetArtifact> <http://www.semanticweb.org/simple-workflow-ontology#datacache> ; 
+  rdf:type owl:NamedIndividual , 
+  <http://www.semanticweb.org/simple-workflow-ontology#DataFlow> . 
+<http://www.semanticweb.org/simple-workflow-ontology#hasActions> rdfs:subPropertyOf <http://www.semanticweb.org/simple-workflow-ontology#hasArc> ; 
+  rdfs:domain <http://www.semanticweb.org/simple-workflow-ontology#Workflow> ; 
+  rdfs:range <http://www.semanticweb.org/simple-workflow-ontology#Action> ; 
+  rdf:type owl:ObjectProperty . 
+<http://www.semanticweb.org/simple-workflow-ontology#partOf> rdfs:domain _:bD341B06Cx13 ; 
+  rdfs:range <http://www.semanticweb.org/simple-workflow-ontology#Workflow> ; 
+  rdf:type owl:ObjectProperty . 
+<http://www.semanticweb.org/simple-workflow-ontology#hasData> rdfs:domain <http://www.semanticweb.org/simple-workflow-ontology#DataFlow> ; 
+  rdfs:range <http://www.semanticweb.org/simple-workflow-ontology#Data> ; 
+  rdf:type owl:ObjectProperty . 
+<http://www.semanticweb.org/simple-workflow-ontology#Step> rdfs:subClassOf <http://www.semanticweb.org/simple-workflow-ontology#Node> ; 
+  rdf:type owl:Class . 
+<http://www.semanticweb.org/simple-workflow-ontology#hasTargetArtifact> rdfs:subPropertyOf <http://www.semanticweb.org/simple-workflow-ontology#hasTarget> ; 
+  rdfs:range <http://www.semanticweb.org/simple-workflow-ontology#Artifacts> ; 
+  rdf:type owl:ObjectProperty . 
+<http://www.semanticweb.org/simple-workflow-ontology#hasAction> rdfs:domain <http://www.semanticweb.org/simple-workflow-ontology#Step> ; 
+  rdfs:range <http://www.semanticweb.org/simple-workflow-ontology#Action> ; 
+  owl:inverseOf <http://www.semanticweb.org/simple-workflow-ontology#isActionOf> ; 
+  rdf:type owl:ObjectProperty . 
+<http://www.semanticweb.org/simple-workflow-ontology#uc3_wrapper> <http://www.semanticweb.org/simple-workflow-ontology#hasActionBy> <http://www.semanticweb.org/simple-workflow-ontology#action2> ; 
+  rdf:type <http://www.semanticweb.org/simple-workflow-ontology#Artifacts> , 
+  owl:NamedIndividual . 
+<http://www.semanticweb.org/simple-workflow-ontology#DirectedGraph> owl:equivalentClass <http://www.semanticweb.org/simple-workflow-ontology#Workflow> ; 
+  rdf:type owl:Class . 
+<http://www.semanticweb.org/simple-workflow-ontology#redirect> rdfs:range xsd:anyURI ; 
+  rdf:type owl:DatatypeProperty . 
+<http://www.semanticweb.org/simple-workflow-ontology#process_flow_2> <http://www.semanticweb.org/simple-workflow-ontology#hasTargetStep> <http://www.semanticweb.org/simple-workflow-ontology#uc3_agent_step> ; 
+  <http://www.semanticweb.org/simple-workflow-ontology#hasSourceStep> <http://www.semanticweb.org/simple-workflow-ontology#uc3_wrapper_step> ; 
+  rdf:type <http://www.semanticweb.org/simple-workflow-ontology#ProcessFlow> , 
+  owl:NamedIndividual . 
+<http://www.semanticweb.org/simple-workflow-ontology#data-header> rdf:type <http://www.semanticweb.org/simple-workflow-ontology#Data> , 
+    owl:NamedIndividual ; 
+  <http://www.semanticweb.org/simple-workflow-ontology#value> "http://lvh.me/datacache"^^xsd:anyURI . 
+<http://www.semanticweb.org/simple-workflow-ontology#DataFlow> rdfs:subClassOf <http://www.semanticweb.org/simple-workflow-ontology#DirectedArc> ; 
+  rdf:type owl:Class . 
+<http://www.semanticweb.org/simple-workflow-ontology#value> rdfs:range xsd:anyURI ; 
+  rdf:type owl:DatatypeProperty . 
+<http://www.semanticweb.org/simple-workflow-ontology#isActionOf> rdfs:domain <http://www.semanticweb.org/simple-workflow-ontology#Action> ; 
+  rdfs:range <http://www.semanticweb.org/simple-workflow-ontology#Step> ; 
+  rdf:type owl:ObjectProperty . 
+<http://www.semanticweb.org/simple-workflow-ontology#mod1> <http://www.semanticweb.org/simple-workflow-ontology#hasSourceArtifact> <http://www.semanticweb.org/simple-workflow-ontology#datacache> ; 
+  <http://www.semanticweb.org/simple-workflow-ontology#hasData> <http://www.semanticweb.org/simple-workflow-ontology#data-input1> ; 
+  <http://www.semanticweb.org/simple-workflow-ontology#hasTargetArtifact> <http://www.semanticweb.org/simple-workflow-ontology#uc3_wrapper> ; 
+  rdf:type owl:NamedIndividual , 
+  <http://www.semanticweb.org/simple-workflow-ontology#DataFlow> . 
+<http://www.semanticweb.org/simple-workflow-ontology#data-output> rdf:type <http://www.semanticweb.org/simple-workflow-ontology#Data> , 
+    owl:NamedIndividual ; 
+  <http://www.semanticweb.org/simple-workflow-ontology#value> "http://lvh.me/datacache"^^xsd:anyURI . 
+<http://www.semanticweb.org/simple-workflow-ontology#associate> rdfs:domain <http://www.semanticweb.org/simple-workflow-ontology#Step> ; 
+  rdfs:range <http://www.semanticweb.org/simple-workflow-ontology#Artifacts> ; 
+  rdf:type owl:ObjectProperty . 
+<http://www.semanticweb.org/simple-workflow-ontology#header> <http://www.semanticweb.org/simple-workflow-ontology#hasSourceArtifact> <http://www.semanticweb.org/simple-workflow-ontology#datacache> ; 
+  <http://www.semanticweb.org/simple-workflow-ontology#hasData> <http://www.semanticweb.org/simple-workflow-ontology#data-header> ; 
+  <http://www.semanticweb.org/simple-workflow-ontology#hasTargetArtifact> <http://www.semanticweb.org/simple-workflow-ontology#uc3_agent_service> ; 
+  rdf:type owl:NamedIndividual , 
+  <http://www.semanticweb.org/simple-workflow-ontology#DataFlow> . 
+<http://www.semanticweb.org/simple-workflow-ontology#uc3_agent_service> <http://www.semanticweb.org/simple-workflow-ontology#hasActionBy> <http://www.semanticweb.org/simple-workflow-ontology#action3> ; 
+  rdf:type <http://www.semanticweb.org/simple-workflow-ontology#Artifacts> , 
+  owl:NamedIndividual . 
+<http://www.semanticweb.org/simple-workflow-ontology#DirectedArc> rdf:type owl:Class . 
+<http://www.semanticweb.org/simple-workflow-ontology#hasTarget> rdfs:range _:bD341B06Cx9 ; 
+  owl:inverseOf <http://www.semanticweb.org/simple-workflow-ontology#targetOf> ; 
+  rdf:type owl:ObjectProperty . 
+<http://www.semanticweb.org/simple-workflow-ontology#uc3_wrapper_step> <http://www.semanticweb.org/simple-workflow-ontology#hasAction> <http://www.semanticweb.org/simple-workflow-ontology#action2> ; 
+  rdf:type owl:NamedIndividual , 
+  <http://www.semanticweb.org/simple-workflow-ontology#Step> . 
+<http://www.semanticweb.org/simple-workflow-ontology#hasNode> rdfs:subPropertyOf <http://www.semanticweb.org/simple-workflow-ontology#hasPart> ; 
+  rdfs:domain <http://www.semanticweb.org/simple-workflow-ontology#Workflow> ; 
+  rdfs:range <http://www.semanticweb.org/simple-workflow-ontology#Node> ; 
+  rdf:type owl:ObjectProperty . 
+<http://www.semanticweb.org/simple-workflow-ontology#hasArtifact> rdfs:subPropertyOf <http://www.semanticweb.org/simple-workflow-ontology#hasNode> ; 
+  rdfs:domain <http://www.semanticweb.org/simple-workflow-ontology#Workflow> ; 
+  rdfs:range <http://www.semanticweb.org/simple-workflow-ontology#Artifacts> ; 
+  rdf:type owl:ObjectProperty . 
+<http://www.semanticweb.org/simple-workflow-ontology#data-jou> rdf:type <http://www.semanticweb.org/simple-workflow-ontology#Data> , 
+    owl:NamedIndividual ; 
+  <http://www.semanticweb.org/simple-workflow-ontology#value> "http://lvh.me/datacache"^^xsd:anyURI . 
+<http://www.semanticweb.org/simple-workflow-ontology#headfile> <http://www.semanticweb.org/simple-workflow-ontology#hasSourceArtifact> <http://www.semanticweb.org/simple-workflow-ontology#uc3_wrapper> ; 
+  <http://www.semanticweb.org/simple-workflow-ontology#hasData> <http://www.semanticweb.org/simple-workflow-ontology#data-header> ; 
+  <http://www.semanticweb.org/simple-workflow-ontology#hasTargetArtifact> <http://www.semanticweb.org/simple-workflow-ontology#datacache> ; 
+  rdf:type owl:NamedIndividual , 
+  <http://www.semanticweb.org/simple-workflow-ontology#DataFlow> . 
+<http://www.semanticweb.org/simple-workflow-ontology#hasStep> rdfs:subPropertyOf <http://www.semanticweb.org/simple-workflow-ontology#hasNode> ; 
+  rdfs:domain <http://www.semanticweb.org/simple-workflow-ontology#Workflow> ; 
+  rdfs:range <http://www.semanticweb.org/simple-workflow-ontology#Step> ; 
+  rdf:type owl:ObjectProperty . 
+_:bD341B06Cx1 rdf:type owl:Class ; 
+  owl:unionOf _:bD341B06Cx2 . 
+_:bD341B06Cx2 rdf:rest _:bD341B06Cx3 ; 
+  rdf:first <http://www.semanticweb.org/simple-workflow-ontology#DirectedArc> . 
+_:bD341B06Cx3 rdf:rest rdf:nil ; 
+  rdf:first <http://www.semanticweb.org/simple-workflow-ontology#Node> . 
+_:bD341B06Cx5 rdf:type owl:Class ; 
+  owl:unionOf _:bD341B06Cx6 . 
+_:bD341B06Cx6 rdf:rest _:bD341B06Cx7 ; 
+  rdf:first <http://www.semanticweb.org/simple-workflow-ontology#Artifacts> . 
+_:bD341B06Cx7 rdf:rest rdf:nil ; 
+  rdf:first <http://www.semanticweb.org/simple-workflow-ontology#Step> . 
+_:bD341B06Cx9 rdf:type owl:Class ; 
+  owl:unionOf _:bD341B06Cx10 . 
+_:bD341B06Cx10 rdf:rest _:bD341B06Cx11 ; 
+  rdf:first <http://www.semanticweb.org/simple-workflow-ontology#Artifacts> . 
+_:bD341B06Cx11 rdf:rest rdf:nil ; 
+  rdf:first <http://www.semanticweb.org/simple-workflow-ontology#Step> . 
+_:bD341B06Cx13 rdf:type owl:Class ; 
+  owl:unionOf _:bD341B06Cx14 . 
+_:bD341B06Cx14 rdf:rest _:bD341B06Cx15 ; 
+  rdf:first <http://www.semanticweb.org/simple-workflow-ontology#DirectedArc> . 
+_:bD341B06Cx15 rdf:rest rdf:nil ; 
+  rdf:first <http://www.semanticweb.org/simple-workflow-ontology#Node> . 
+_:bD341B06Cx17 rdf:type owl:Class ; 
+  owl:unionOf _:bD341B06Cx18 . 
+_:bD341B06Cx18 rdf:rest _:bD341B06Cx19 ; 
+  rdf:first <http://www.semanticweb.org/simple-workflow-ontology#DataFlow> . 
+_:bD341B06Cx19 rdf:rest rdf:nil ; 
+  rdf:first <http://www.semanticweb.org/simple-workflow-ontology#ProcessFlow> . 
+_:bD341B06Cx21 rdf:type owl:Class ; 
+  owl:unionOf _:bD341B06Cx22 . 
+_:bD341B06Cx22 rdf:rest _:bD341B06Cx23 ; 
+  rdf:first <http://www.semanticweb.org/simple-workflow-ontology#DataFlow> . 
+_:bD341B06Cx23 rdf:rest rdf:nil ; 
+  rdf:first <http://www.semanticweb.org/simple-workflow-ontology#ProcessFlow> . 
+_:bD341B06Cx25 owl:members _:bD341B06Cx26 ; 
+  rdf:type owl:AllDisjointClasses . 
+_:bD341B06Cx26 rdf:rest _:bD341B06Cx27 ; 
+  rdf:first <http://www.semanticweb.org/simple-workflow-ontology#Action> . 
+_:bD341B06Cx27 rdf:rest _:bD341B06Cx28 ; 
+  rdf:first <http://www.semanticweb.org/simple-workflow-ontology#DataFlow> . 
+_:bD341B06Cx28 rdf:rest rdf:nil ; 
+  rdf:first <http://www.semanticweb.org/simple-workflow-ontology#ProcessFlow> . 
