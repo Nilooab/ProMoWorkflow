@@ -20,8 +20,8 @@
 
 ###  http://www.semanticweb.org/simple-workflow-ontology#hasAction
 :hasAction rdf:type owl:ObjectProperty ;
-           owl:inverseOf :isActionOf ;
-           rdfs:domain :Step ;
+           rdfs:subPropertyOf :hasArc ;
+           rdfs:domain :Workflow ;
            rdfs:range :Action .
 
 
@@ -34,8 +34,8 @@
 
 ###  http://www.semanticweb.org/simple-workflow-ontology#hasActions
 :hasActions rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf :hasArc ;
-            rdfs:domain :Workflow ;
+            owl:inverseOf :isActionOf ;
+            rdfs:domain :Step ;
             rdfs:range :Action .
 
 
@@ -59,8 +59,8 @@
          rdfs:range :Data .
 
 
-###  http://www.semanticweb.org/simple-workflow-ontology#hasDataflow
-:hasDataflow rdf:type owl:ObjectProperty ;
+###  http://www.semanticweb.org/simple-workflow-ontology#hasDataFlow
+:hasDataFlow rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf :hasArc ;
              rdfs:domain :Workflow ;
              rdfs:range :DataFlow .

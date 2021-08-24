@@ -34,27 +34,27 @@
 ###  http://www.semanticweb.org/simple-workflow-ontology#associate
 :associate rdf:type owl:ObjectProperty ;
            rdfs:domain :Step ;
-           rdfs:range :Artifacts .
+           rdfs:range :Artifact .
 
 
 ###  http://www.semanticweb.org/simple-workflow-ontology#hasAction
 :hasAction rdf:type owl:ObjectProperty ;
-           owl:inverseOf :isActionOf ;
-           rdfs:domain :Step ;
+           rdfs:subPropertyOf :hasArc ;
+           rdfs:domain :Workflow ;
            rdfs:range :Action .
 
 
 ###  http://www.semanticweb.org/simple-workflow-ontology#hasActionBy
 :hasActionBy rdf:type owl:ObjectProperty ;
              owl:inverseOf :isActionFor ;
-             rdfs:domain :Artifacts ;
+             rdfs:domain :Artifact ;
              rdfs:range :Action .
 
 
 ###  http://www.semanticweb.org/simple-workflow-ontology#hasActions
 :hasActions rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf :hasArc ;
-            rdfs:domain :Workflow ;
+            owl:inverseOf :isActionOf ;
+            rdfs:domain :Step ;
             rdfs:range :Action .
 
 
@@ -69,7 +69,7 @@
 :hasArtifact rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf :hasNode ;
              rdfs:domain :Workflow ;
-             rdfs:range :Artifacts .
+             rdfs:range :Artifact .
 
 
 ###  http://www.semanticweb.org/simple-workflow-ontology#hasData
@@ -78,8 +78,8 @@
          rdfs:range :Data .
 
 
-###  http://www.semanticweb.org/simple-workflow-ontology#hasDataflow
-:hasDataflow rdf:type owl:ObjectProperty ;
+###  http://www.semanticweb.org/simple-workflow-ontology#hasDataFlow
+:hasDataFlow rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf :hasArc ;
              rdfs:domain :Workflow ;
              rdfs:range :DataFlow .
@@ -114,7 +114,7 @@
 :hasSource rdf:type owl:ObjectProperty ;
            owl:inverseOf :sourceOf ;
            rdfs:range [ rdf:type owl:Class ;
-                        owl:unionOf ( :Artifacts
+                        owl:unionOf ( :Artifact
                                       :Step
                                     )
                       ] .
@@ -123,7 +123,7 @@
 ###  http://www.semanticweb.org/simple-workflow-ontology#hasSourceArtifact
 :hasSourceArtifact rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf :hasSource ;
-                   rdfs:range :Artifacts .
+                   rdfs:range :Artifact .
 
 
 ###  http://www.semanticweb.org/simple-workflow-ontology#hasSourceStep
@@ -143,7 +143,7 @@
 :hasTarget rdf:type owl:ObjectProperty ;
            owl:inverseOf :targetOf ;
            rdfs:range [ rdf:type owl:Class ;
-                        owl:unionOf ( :Artifacts
+                        owl:unionOf ( :Artifact
                                       :Step
                                     )
                       ] .
@@ -152,7 +152,7 @@
 ###  http://www.semanticweb.org/simple-workflow-ontology#hasTargetArtifact
 :hasTargetArtifact rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf :hasTarget ;
-                   rdfs:range :Artifacts .
+                   rdfs:range :Artifact .
 
 
 ###  http://www.semanticweb.org/simple-workflow-ontology#hasTargetStep
@@ -164,7 +164,7 @@
 ###  http://www.semanticweb.org/simple-workflow-ontology#isActionFor
 :isActionFor rdf:type owl:ObjectProperty ;
              rdfs:domain :Action ;
-             rdfs:range :Artifacts .
+             rdfs:range :Artifact .
 
 
 ###  http://www.semanticweb.org/simple-workflow-ontology#isActionOf
@@ -230,13 +230,9 @@
 
 
 ###  http://www.semanticweb.org/simple-workflow-ontology#Artifact
-:Artifact rdf:type owl:Class .
-
-
-###  http://www.semanticweb.org/simple-workflow-ontology#Artifacts
-:Artifacts rdf:type owl:Class ;
-           rdfs:subClassOf :Node ;
-           owl:disjointWith :Step .
+:Artifact rdf:type owl:Class ;
+          rdfs:subClassOf :Node ;
+          owl:disjointWith :Step .
 
 
 ###  http://www.semanticweb.org/simple-workflow-ontology#Data
@@ -344,11 +340,18 @@
                                                             <http://www.semanticweb.org/simple-workflow-ontology#9af01454-5422-4f6d-b1de-b0919ab3fab3_node> ,
                                                             <http://www.semanticweb.org/simple-workflow-ontology#9bb6cd7b-799c-472c-9cbc-d4c1c459ba81_node> ;
                                                :hasData <http://www.semanticweb.org/simple-workflow-ontology#77bc57c8-d52a-461b-a7a2-c9e7269a936a_data> ;
+                                               :hasDataFlow :c8227e42-a343-4a58-8a70-3df573ee1645_arc ,
+                                                            :d937de52-f4ea-489d-94a0-62db1afca941_arc ,
+                                                            :ec121b61-a7dd-4031-a56a-7a99f3809811_arc ,
+                                                            :fb8e914d-5d8b-45f4-a5cf-0e15b3b07103_arc ,
+                                                            <http://www.semanticweb.org/simple-workflow-ontology#192a0d80-279e-454d-8b8b-6868d3ee39eb_arc> ,
+                                                            <http://www.semanticweb.org/simple-workflow-ontology#405042f4-fe9e-49a9-9340-78d922008c0a_arc> ,
+                                                            <http://www.semanticweb.org/simple-workflow-ontology#468cfe9e-076a-465d-a0cd-df9a41a2e762_arc> ,
+                                                            <http://www.semanticweb.org/simple-workflow-ontology#7df8c718-42d3-4f79-bc3a-b8d3e55f1dcf_arc> ,
+                                                            <http://www.semanticweb.org/simple-workflow-ontology#8b5c6c2d-b961-480d-9276-a99bcf9e11b9_arc> ;
                                                :hasStep :a805c571-e3a7-40a4-80f2-f63c87ff7af7_node ,
                                                         :b69a0793-4b97-45f1-b69b-14aeaeeaed8b_node ,
                                                         <http://www.semanticweb.org/simple-workflow-ontology#505d634b-ec57-48a3-90b1-b850b518b0bf_node> ;
-                                               :hasDataFlow :ec121b61-a7dd-4031-a56a-7a99f3809811_arc ,
-                                                            <http://www.semanticweb.org/simple-workflow-ontology#192a0d80-279e-454d-8b8b-6868d3ee39eb_arc> ;
                                                rdfs:label "uc3" .
 
 
